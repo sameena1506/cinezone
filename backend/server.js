@@ -3,30 +3,29 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
-import favoriteRoutes from "./routes/favoriteRoutes.js"; // optional
+import favoriteRoutes from "./routes/favoriteRoutes.js";
 
-dotenv.config(); // ✅ Load .env first
+dotenv.config(); // Load environment variables
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Routes
+// Routes
 app.use("/api/users", userRoutes);
-app.use("/api/favorites", favoriteRoutes); 
+app.use("/api/favorites", favoriteRoutes);
 
-// ✅ MongoDB Connection
+// MongoDB Atlas Connection
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("✅ MongoDB connected successfully"))
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ Connected to MongoDB Atlas successfully"))
   .catch((err) => console.error("❌ MongoDB connection failed:", err));
 
-// ✅ Default route
-app.get("/", (req, res) => res.send("CineZone Backend Running ✅"));
+// Default route
+app.get("/", (req, res) => {
+  res.send("🎬 CineZone Backend is running successfully on Render!");
+});
 
-// ✅ Start server
+// Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server is running on port ${PORT}`));
