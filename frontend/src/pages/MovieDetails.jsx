@@ -5,7 +5,7 @@ import "./Home.css";
 
 const API_KEY = "e57ed672f332201311e63165d765cdd6";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "https://cinezone-backend.onrender.com";
 const user = localStorage.getItem("userEmail") || "guest";
  // 🔒 later replace with logged-in user
 
