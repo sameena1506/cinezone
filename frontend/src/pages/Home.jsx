@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const API_KEY = "e57ed672f332201311e63165d765cdd6"; // your TMDb key
-const BACKEND_URL = "http://localhost:5000"; // backend base URL
+const BACKEND_URL = "https://cinezone-backend.onrender.com"; // backend base URL
 
 const Home = () => {
   const navigate = useNavigate();
