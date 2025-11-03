@@ -12,7 +12,7 @@ function Favourite() {
 
     const fetchFavourites = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/favorites/${userEmail}`);
+        const res = await axios.get(`https://cinezone-backend.onrender.com/api/favorites/${userEmail}`);
         setFavourites(res.data);
       } catch (err) {
         console.error("❌ Error fetching favourites:", err);
