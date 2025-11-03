@@ -13,6 +13,7 @@ const favoriteSchema = new mongoose.Schema(
 
 favoriteSchema.index({ movieId: 1, likedBy: 1 }, { unique: true });
 
-const Favorite = mongoose.model("Favorite", favoriteSchema);
+const Favorite =
+  mongoose.models.Favorite || mongoose.model("Favorite", favoriteSchema);
 
 export default Favorite;
